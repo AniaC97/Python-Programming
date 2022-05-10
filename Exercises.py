@@ -78,5 +78,126 @@ def vowelsCounter():
 
 print(vowelsCounter())
 
+# Utwórz pętlę while, która poprosi użytkownika o wprowadzenie dwóch liczb. Liczby te należy zsumować i wyświetlić ich obliczoną wartość.
+# Pętla powinna pytać użytkownika, czy chce wykonać działanie ponownie. Jeżeli tak, cała procedura powinna zostać powtórzona.
+# W przeciwnym przypadku pętla powinna zakończyć działanie.
+
+
+odp=str(input('Do you want some help with counting?'))
+
+
+while odp == 'Yes' or odp == ' Yes' or odp == 'yes':
+    a = int(input('Give me first number: '))
+    b = int(input('Give me second number: '))
+    print('Here you are:', a+b)
+    odp = str(input('Do you want me to count something else?'))
+    if odp == 'No' or odp == ' No' or odp == 'no':
+        print('Ok, bye!')
+    else:
+        print('Sorry, I don\'t understand. Bye!')
+        break
+
+
+# Utwórz pętlę, która poprosi użytkownika o podanie liczby. Pętla powinna wykonać 10 iteracji i zapisywać sumę bieżącą liczb
+# podawanych przez użytkownika.
+
+
+przejscie = 0
+suma = 0
+
+while przejscie < 10:
+    liczba = int(input('Please, give me a number: '))
+    przejscie += 1
+    suma += liczba
+    print('Suma:', suma, 'Podejście:', przejscie)
+
+
+# Kolekcjoner owadów
+# Kolekcjoner codziennie poluje na owady. Opracuj program, który będzie obliczał sumę owadów zebranych w ciągu pięciu dni. Program powinien
+# w pętli pytać użytkownika, ile owadów zebrał każdego dnia, a po zakończeniu pętli wyświetlić sumę zebranych owadów.
+
+dzien = 0
+owady = 0
+
+while dzien < 5:
+    ilosc = int(input('Hej! Ile owadów zebrałeś dzisiaj? '))
+    dzien += 1
+    owady += ilosc
+    if ilosc > 4 or owady > 4:
+        print('Super! Na dzień', dzien, 'masz', owady, 'owadów. Brawo!')
+    elif ilosc > 1 or owady > 1:
+        print('Super! Na dzień', dzien, 'masz', owady, 'owady. Brawo!')
+    else:
+        print('Super! Na dzień', dzien, 'masz', owady, 'owada. Brawo!')
+
+#Spalone kalorie
+#Biegając na bieżni, można w ciągu minuty spalić 4,2 kalorii. Opracuj program, który w pętli wyświetli liczbę spalonych kalorii
+# po 10, 15, 20, 25 i 30 minutach biegania.
+
+
+print('ILE SPALIŁEŚ KALORII PODCZAS BIEGANIA?\n')
+print('MINUTA \t KALORIE')
+
+for min in range(10,35,5):
+    kalorie = min*4.2
+    print(min, '\t\t', kalorie)
+
+
+# Budżet
+# Opracuj program, który poprosi użytkownika o podanie wielkości budżetu miesięcznego. Następnie w pętli poproś użytkownika o podanie
+# poszczególnych wydatków w danym miesiącu i zapisz sumę bieżącą wydatków. Po wyjściu z pętli program powinien wyświetlić wartość,
+# o którą użytkownik przekroczył budżet lub która pozostała we wskazanym budżecie.
+
+budzet = int(input('Podaj swój miesięczy budżet: '))
+kwota = 0
+
+l = 0
+
+while l == 0:
+    prad = int(input('Ile płacisz za prąd? '))
+    kwota += prad
+    gaz = int(input('A za gaz? '))
+    kwota += gaz
+    jedzenie = int(input('Napisz swoje wydadki za jedzenie. '))
+    kwota += jedzenie
+    if kwota > budzet:
+        print('Niestety ale przekroczyłeś swój budżet! Wydajesz:', kwota, 'miesięcznie. To o', (kwota-budzet), 'więcej niż powinieneś :(')
+    elif kwota == budzet:
+        print('Twoje wydatki na życie są równe budżetowi!')
+    else:
+        print('Super! W tym miesiącu zaoszczędzisz:', (budzet-kwota), '. Brawo! :)')
+    l += 1
+
+
+# Przebyta odległość
+# Odległość, którą pokona pojazd, można obliczyć za pomocą następującego wzoru:
+
+# odległość = szybkość × czas
+
+# Przykładowo pociąg jadący przez trzy godziny z szybkością 40 km/h przejedzie 120 km. Opracuj program, który będzie prosił użytkownika
+# o podanie szybkości pojazdu (w km/h) i czasu trwania podróży. Następnie program za pomocą pętli powinien wyświetlić odległość przebytą
+# przez pojazd w ciągu każdej godziny jazdy. Oto przykład działania programu.
+
+# Z jaką szybkością poruszał się pojazd? 40 (Enter)
+# Jak długo trwała podróż? 3 (Enter)
+
+# Godzina        Przebyta odległość
+# ---------------------------------
+# 1                             40
+# 2                             80
+# 3                             120
+
+szybkosc = int(input('Z jaką szybkością poruszał się pojazd? '))
+czas = int(input('Jak długo trwała podróż? '))
+
+print('Godzina \t Przebyta odległość')
+print('-'*32)
+
+for i in range(1, czas+1):
+    odleglosc = i*szybkosc
+    string = str(odleglosc)
+    align = string.rjust(30)
+    print(i, align,)
+
 
 
